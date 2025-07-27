@@ -16,7 +16,6 @@ class ScanQrScreen extends StatefulWidget {
 }
 
 class _ScanQrScreenState extends State<ScanQrScreen> {
-  bool showScanner = false;
   final userController = Get.put(RegisteredUserController());
 
   Future<void> _scanBarcode(BuildContext context) async {
@@ -80,52 +79,7 @@ class _ScanQrScreenState extends State<ScanQrScreen> {
                       border: Border.all(color: Colors.transparent, width: 2),
                       borderRadius: BorderRadius.circular(width * 0.041),
                     ),
-                    child:
-                        // showScanner
-                        //     ? MobileScanner(
-                        //         controller: MobileScannerController(
-                        //           detectionSpeed: DetectionSpeed.normal,
-                        //         ),
-                        //         onDetect: (capture) async {
-                        //           debugPrint('📷 Barcode detected!');
-
-                        //           final List<Barcode> barcodes = capture.barcodes;
-                        //           // final Uint8List? image = capture.image;
-                        //           // for (final barcode in barcodes) {
-                        //           //   log('barcode found ${barcode.rawValue}');
-                        //           //   log(capture.image.toString());
-                        //           // }
-                        //           final url =
-                        //               Uri.parse(barcodes.first.rawValue ?? "");
-                        //           // final queryParameters = url.queryParameters;
-                        //           log(url.toString());
-                        //           // log(queryParameters.toString());
-                        //           // await getUserScaned(
-                        //           //     context, url.toString());
-                        //           Get.to(() => UserInfoScreen(
-                        //                 result: barcodes.first.rawValue ?? '',
-                        //               ));
-                        //           // if (image != null) {
-                        //           //   showDialog(
-                        //           //       context: context,
-                        //           //       builder: (context) {
-                        //           //         return AlertDialog(
-                        //           //           title:
-                        //           //               Text(barcodes.first.rawValue ?? ''),
-                        //           //           content:
-                        //           //               Image(image: MemoryImage(image)),
-                        //           //         );
-                        //           //       });
-                        //           // }
-                        //           // ScaffoldMessenger.of(context).showSnackBar(
-                        //           //   SnackBar(
-                        //           //       content: Text(
-                        //           //           'Scanned: ${barcodes.first.rawValue}')),
-                        //           // );
-                        //         },
-                        //       )
-                        //     :
-                        Center(
+                    child: Center(
                       child: Stack(
                         children: [
                           Image.asset(
